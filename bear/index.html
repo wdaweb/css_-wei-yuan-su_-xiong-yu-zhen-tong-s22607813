@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: lightgrey;
+        }
+
+        .container {
+            width: 99%;
+            height: 98%;
+            border: 8px dashed black;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #bear_body {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: #000;
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #bear_body::before {
+            content:'';
+            width: 80px;
+            height: 80px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            left: 50px;
+            top: 0;
+        }
+
+        #bear_body::after {
+            content:'';
+            width: 80px;
+            height: 80px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            right: 50px;
+            top: 0;
+        }
+
+        #bear_face {
+            width: 200px;
+            height: 150px;
+            border-radius: 50%;
+            background: white;
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #bear_face::before {
+            content:'';
+            width: 55px;
+            height: 55px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            left: -87px;
+            top: -162px;
+        }
+
+        #bear_face::after {
+            content:'';
+            width: 55px;
+            height: 55px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            right: -87px;
+            top: -162px;
+        }
+
+        #bear_nose {
+            width: 45px;
+            height: 35px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 0;
+            position: absolute;
+            top: -80px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #bear_nose::before {
+            content:'';
+            width: 120px;
+            height: 120px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            left: -250px;
+            top: -20px;
+        }
+
+        #bear_nose::after {
+            content:'';
+            width: 120px;
+            height: 120px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            right: -250px;
+            top: -20px;
+        }
+
+        #bear_mouth {
+            width: 120px;
+            height: 50px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 0;
+            position: absolute;
+            top: 55px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #bear_leftEye {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: white;
+            z-index: 0;
+            position: absolute;
+            top: -220px;
+            bottom: 0;
+            left: -200px;
+            right: 0;
+            margin: auto;
+        }
+
+        #bear_leftEye::before {
+            content:'';
+            width: 60px;
+            height: 60px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+
+        #bear_rightEye {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: white;
+            z-index: 0;
+            position: absolute;
+            top: -220px;
+            bottom: 0;
+            left: -0px;
+            right: -200px;
+            margin: auto;
+        }
+
+        #bear_rightEye::before {
+            content:'';
+            width: 60px;
+            height: 60px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #left_chest {
+            width: 100px;
+            height: 70px;
+            background: white;
+            z-index: 0;
+            position: absolute;
+            top: 325px;
+            bottom: 0;
+            left: -100px;
+            right: 0px;
+            margin: auto;
+        }
+
+        #left_chest::before {
+            content:'';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 70px 0 0 70px;
+            border-color: transparent transparent transparent #000000;
+            position: absolute;
+            top: 0;
+        }
+
+        #left_chest::after {
+            content:'';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 35px 35px 0;
+            border-color: transparent #000000 transparent transparent;
+            position: absolute;
+            top: 0;
+            right: 0px;
+        }
+
+        #right_chest {
+            width: 100px;
+            height: 70px;
+            background: white;
+            z-index: 0;
+            position: absolute;
+            top: 325px;
+            bottom: 0;
+            left: 100px;
+            right: 0px;
+            margin: auto;
+        }
+
+        #right_chest::before {
+            content:'';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 70px 70px;
+            border-color: transparent transparent #000000 transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #right_chest::after {
+            content:'';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 35px 35px 0 0;
+            border-color: #000000 transparent transparent transparent;
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="bear_body"></div>
+        <div id="bear_face"></div>
+        <div id="bear_nose"></div>
+        <div id="bear_mouth"></div>
+        <div id="bear_leftEye"></div>
+        <div id="bear_rightEye"></div>
+        <div id="left_chest"></div>
+        <div id="right_chest"></div>
+    </div>
+</body>
+</html>

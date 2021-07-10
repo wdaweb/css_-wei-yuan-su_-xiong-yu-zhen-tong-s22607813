@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>針筒</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    #main {
+        height: 100%;
+        position: relative;
+    }
+
+    #black {
+        width: 100px;
+        height: 200px;
+        background: black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    #black::before  {
+        content: '';
+        width: 300px;
+        height: 200px;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(181,181,181,1) 63%, rgba(255,255,255,1) 100%);
+        position: absolute;
+        left: -300px;
+        
+    }
+
+    #black::after  {
+        content: '';
+        width: 300px;
+        height: 200px;
+        background: rgb(255,243,102);
+        background: linear-gradient(180deg, rgba(255,243,102,1) 0%, rgba(201,192,78,1) 63%, rgba(255,243,102,1) 100%);
+        position: absolute;
+        left: 100px;
+        z-index: 1;
+    }
+
+    #syringe_head {
+        width: 150px;
+        height: 150px;
+        border: 1px solid grey;
+        border-radius: 15px;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(181,181,181,1) 68%, rgba(255,255,255,1) 100%);
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    #syringe_head::before {
+        content: '';
+        width: 200px;
+        height: 1px;
+        background: rgb(62,62,62);
+        background: linear-gradient(180deg, rgba(62,62,62,1) 0%, rgba(62,62,62,1) 50%, rgba(128,128,128,1) 50%, rgba(128,128,128,1) 100%);
+        border: 1px solid grey;
+        position: absolute;
+        top: 50%;
+        left: 149px;
+        transform: translateY(-50%);
+        z-index: -9;
+    }
+
+    #syringe_foot {
+        width: 150px;
+        height: 150px;
+        border: 1px solid grey;
+        border-radius: 15px;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(181,181,181,1) 68%, rgba(255,255,255,1) 100%);
+        position: absolute;
+        top: 50%;
+        left: 29%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    #syringe_foot::before {
+        content: '';
+        width: 100px;
+        height: 200px;
+        border: 1px solid grey;
+        border-radius: 15px;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(181,181,181,1) 63%, rgba(255,255,255,1) 100%);
+        position: absolute;
+        top: -25px;
+        left: -103px;
+    }
+
+    #syringe_body {
+        width: 700px;
+        height: 200px;
+        border: 1px solid grey;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .mark {
+        width: 1px;
+        height: 35px;
+        background: black;
+    }
+
+    .flex_end {
+        position: absolute;
+        margin-top: auto;
+        left: 0px;
+        align-self: flex-end;
+        color: grey;
+        font-family: '微軟正黑體';
+        font-weight: bolder;
+        font-size: 1.6rem;
+    }
+</style>
+<body>
+    <div id="main">
+        <div id="black"></div>
+        <div id="syringe_head"></div>
+        <div id="syringe_body">
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <div class="mark"></div>
+            <span class="flex_end">Made In Taiwan</span>
+        </div>
+        <div id="syringe_foot"></div>
+    </div>
+</body>
+</html>
